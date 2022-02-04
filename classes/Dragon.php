@@ -15,6 +15,20 @@ class Dragon extends Personnage {
         $this->y = rand(1,900);
 
         $this->vie = 100;
+
+        self::$numInstances++;
+    }
+
+    /**
+     * @return mixed
+     */
+    public static function getNumInstances()
+    {
+        return self::$numInstances;
+    }
+
+    public static function nbDragon(): int {
+        return self::$numInstances;
     }
 
     // Je redéfini la méthode héritée setNom
